@@ -1,0 +1,48 @@
+{% extends "students/base.html" %}
+
+{% block title %}
+Update Student
+{% endblock %}
+
+{% block content %}
+
+<div class="bg-white border border-gray-300 rounded-lg shadow-sm p-6 max-w-2xl mx-auto">
+
+    <!-- Page Title -->
+    <h2 class="text-2xl font-bold text-violet-500 text-center mb-6">
+        Update Student
+    </h2>
+
+    <!-- Description -->
+    <p class="text-gray-600 text-center mb-6">
+        Update the information for
+        <strong class="text-gray-800">{{ student.name }}</strong>.
+    </p>
+
+    <!-- Update Form -->
+    <form method="POST" class="space-y-4">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button
+            type="submit"
+            class="bg-violet-500 text-white px-6 py-3 rounded font-bold text-lg hover:bg-violet-600"
+        >
+            Save Changes
+        </button>
+
+    </form>
+
+    <!-- Back to Student List -->
+    <a
+        href="{% url 'student_list' %}"
+        class="inline-block mt-6 text-blue-500 font-semibold hover:text-blue-700 underline"
+    >
+        ← Back to Students
+    </a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,298 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+header {
+    background-color: #1f2937;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+h2 {
+    margin-bottom: 25px;
+}
+
+
+/* Add Student button */
+
+.add-student {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.add-student:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* Search */
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.search-form button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #1d4ed8;
+}
+
+.clear-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #555;
+}
+
+
+/* Student cards */
+
+.student-card {
+    background-color: white;
+    padding: 22px;
+    margin: 18px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.student-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.student-card p {
+    margin: 7px 0;
+}
+
+
+/* Action links */
+
+.actions {
+    margin-top: 18px;
+}
+
+.actions a {
+    text-decoration: none;
+    margin-right: 12px;
+    font-weight: bold;
+}
+
+.view-link {
+    color: #2563eb;
+}
+
+.update-link {
+    color: #d97706;
+}
+
+.delete-link {
+    color: #dc2626;
+}
+
+.actions a:hover {
+    text-decoration: underline;
+}
+
+
+/* Forms */
+
+form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+form p {
+    margin-bottom: 18px;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 11px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form button {
+    padding: 11px 18px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* Back link */
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+/* =========================
+   FORM PAGES
+   ========================= */
+
+.form-container {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.form-container h2 {
+    margin-bottom: 10px;
+}
+
+.form-description {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.primary-button {
+    padding: 11px 20px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.primary-button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* =========================
+   STUDENT DETAIL
+   ========================= */
+
+.detail-card {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.detail-card h2 {
+    margin-top: 0;
+}
+
+.student-info {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #f4f6f8;
+    border-radius: 8px;
+}
+
+.student-info h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.student-info p {
+    margin: 12px 0;
+}
+
+
+/* =========================
+   DELETE PAGE
+   ========================= */
+
+.delete-card {
+    max-width: 550px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.delete-card h2 {
+    margin-top: 0;
+}
+
+.warning-text {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.delete-button {
+    padding: 11px 20px;
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.delete-button:hover {
+    background-color: #b91c1c;
+}
+
+.cancel-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6b7280;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.cancel-button:hover {
+    background-color: #4b5563;
+}
