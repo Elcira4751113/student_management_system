@@ -13,6 +13,7 @@ class Student(models.Model):
     ]
 )
     email = models.EmailField(unique=True, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name 
