@@ -28,5 +28,10 @@ urlpatterns = [
     "<int:student_id>/delete/",
     views.delete_student,
     name="delete_student",
-),
+    ),
+
+    path("test-email/", 
+         views.test_email, 
+         name="test_email"
+    ),
 ]
