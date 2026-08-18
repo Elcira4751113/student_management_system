@@ -8,40 +8,174 @@ Update Student
 
 <div class="bg-white border border-gray-300 rounded-lg shadow-sm p-6 max-w-2xl mx-auto">
 
-    <!-- Page Title -->
-    <h2 class="text-2xl font-bold text-violet-500 text-center mb-6">
-        Update Student
-    </h2>
 
-    <!-- Description -->
-    <p class="text-gray-600 text-center mb-6">
-        Update the information for
-        <strong class="text-gray-800">{{ student.name }}</strong>.
-    </p>
+<h2 class="text-2xl font-bold text-gray-800 text-center mb-2">
+    Update Student
+</h2>
 
-    <!-- Update Form -->
-    <form method="POST" class="space-y-4">
+<p class="text-gray-500 text-center mb-6">
+    Update the information for {{ student.name }}.
+</p>
 
-        {% csrf_token %}
 
-        {{ form.as_p }}
+<form method="POST" class="space-y-4">
+
+    {% csrf_token %}
+
+
+    <!-- General form errors -->
+
+    {% comment %}
+    {% if form.errors %}
+        <div class="bg-red-100 border border-red-300 text-red-700 rounded-lg p-4 mb-4">
+            <p class="font-bold">
+                Please correct the errors below.
+            </p>
+        </div>
+    {% endif %}
+    {% endcomment %}
+
+
+    <!-- Name -->
+
+    <div>
+        <label
+            for="{{ form.name.id_for_label }}"
+            class="block text-sm font-semibold text-gray-700 mb-2"
+        >
+            Name
+        </label>
+
+        {{ form.name }}
+
+        {% for error in form.name.errors %}
+            <p class="text-red-600 text-sm mt-1">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </div>
+
+
+    <!-- Age -->
+
+    <div>
+        <label
+            for="{{ form.age.id_for_label }}"
+            class="block text-sm font-semibold text-gray-700 mb-2"
+        >
+            Age
+        </label>
+
+        {{ form.age }}
+
+        {% for error in form.age.errors %}
+            <p class="text-red-600 text-sm mt-1">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </div>
+
+
+    <!-- Field -->
+
+    <div>
+        <label
+            for="{{ form.field.id_for_label }}"
+            class="block text-sm font-semibold text-gray-700 mb-2"
+        >
+            Field
+        </label>
+
+        {{ form.field }}
+
+        {% for error in form.field.errors %}
+            <p class="text-red-600 text-sm mt-1">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </div>
+
+
+    <!-- Gender -->
+
+    <div>
+        <label
+            for="{{ form.gender.id_for_label }}"
+            class="block text-sm font-semibold text-gray-700 mb-2"
+        >
+            Gender
+        </label>
+
+        {{ form.gender }}
+
+        {% for error in form.gender.errors %}
+            <p class="text-red-600 text-sm mt-1">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </div>
+
+
+    <!-- Email -->
+
+    <div>
+        <label
+            for="{{ form.email.id_for_label }}"
+            class="block text-sm font-semibold text-gray-700 mb-2"
+        >
+            Email
+        </label>
+
+        {{ form.email }}
+
+        {% for error in form.email.errors %}
+            <p class="text-red-600 text-sm mt-1">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </div>
+
+
+    <!-- Non-field errors -->
+
+    {% if form.non_field_errors %}
+        <div class="bg-red-100 border border-red-300 text-red-700 rounded-lg p-4">
+
+            {% for error in form.non_field_errors %}
+                <p class="text-red-600 text-sm">
+                    {{ error }}
+                </p>
+            {% endfor %}
+
+        </div>
+    {% endif %}
+
+
+    <!-- Save button -->
+
+    <div class="pt-2">
 
         <button
             type="submit"
-            class="bg-violet-500 text-white px-6 py-3 rounded font-bold text-lg hover:bg-violet-600"
+            class="bg-green-500 text-white px-6 py-3 rounded-lg font-bold text-lg hover:bg-green-600 transition"
         >
             Save Changes
         </button>
 
-    </form>
+    </div>
 
-    <!-- Back to Student List -->
-    <a
-        href="{% url 'student_list' %}"
-        class="inline-block mt-6 text-blue-500 font-semibold hover:text-blue-700 underline"
-    >
-        ← Back to Students
-    </a>
+</form>
+
+
+<!-- Back link -->
+
+<a
+    href="{% url 'student_list' %}"
+    class="inline-block mt-6 text-blue-500 font-semibold hover:text-blue-700 underline"
+>
+    ← Back to Students
+</a>
+
 
 </div>
 

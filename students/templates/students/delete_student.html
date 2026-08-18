@@ -1,4 +1,5 @@
 {% extends "students/base.html" %}
+{% load i18n %}
 
 {% block title %}
 Delete Student
@@ -10,7 +11,7 @@ Delete Student
 
     <!-- Page Title -->
     <h2 class="text-2xl font-bold text-red-500 text-center mb-6">
-        Delete Student
+        {% trans "Delete Student" %}
     </h2>
 
 
@@ -18,12 +19,12 @@ Delete Student
     <div class="bg-red-100 border border-red-300 rounded-lg p-4 mb-6">
 
         <p class="text-gray-800 text-lg">
-            Are you sure you want to delete
+            {% trans "Are you sure you want to delete" %}
             <strong>{{ student.name }}</strong>?
         </p>
 
         <p class="text-red-600 font-semibold mt-2">
-            This action cannot be undone.
+            {% trans "This action cannot be undone." %}
         </p>
 
     </div>
@@ -38,14 +39,14 @@ Delete Student
             type="submit"
             class="bg-red-500 text-white px-5 py-2 rounded font-bold hover:bg-red-600"
         >
-            Yes, Delete Student
+        {% trans "Yes, Delete Student." %}
         </button>
 
         <a
             href="{% url 'student_list' %}"
             class="bg-gray-200 text-gray-800 px-5 py-2 rounded font-semibold hover:bg-gray-500 hover:text-white"
         >
-            Cancel
+            {% trans "Cancel" %}
         </a>
 
     </form>

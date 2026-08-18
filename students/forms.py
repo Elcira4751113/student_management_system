@@ -11,34 +11,34 @@ class StudentForm(forms.ModelForm):
         widgets = {
             "name": forms.TextInput(
                 attrs={
-                    "class": "w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
+                    "class": "w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
                     "placeholder": "Enter student's name",
                 }
             ),
 
             "age": forms.NumberInput(
                 attrs={
-                    "class": "w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
+                    "class": "w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
                     "placeholder": "Enter student's age",
                 }
             ),
 
             "field": forms.TextInput(
                 attrs={
-                    "class": "w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
+                    "class": "w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
                     "placeholder": "Enter student's field",
                 }
             ),
 
             "gender": forms.Select(
                 attrs={
-                    "class": "w-full border border-gray-300 rounded-lg px-4 py-3 bg-white border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
+                    "class": "w-full border border-gray-300 rounded-lg px-4 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500",
                 }
             ),
 
             "email": forms.EmailInput(
                 attrs={
-                    "class": "w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
+                    "class": "w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500",
                     "placeholder": "Enter student's email",
                 }
             ),

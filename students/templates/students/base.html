@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html>
@@ -23,6 +24,45 @@
         <h1 class="text-3xl font-bold text-center tracking-wide">
             Student Management System
         </h1>
+
+        <p class="text-gray-300 text-sm">
+            Total Students: {{ student_count }}
+        </p>
+
+        <div class="flex items-center gap-2">
+    <span class="font-semibold text-gray-700">
+        Language:
+    </span>
+
+    <form action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+
+        <select
+            name="language"
+            onchange="this.form.submit()"
+            class="border border-gray-300 text-gray-900 bg-white rounded-lg px-3 py-2"
+        >
+            {% get_current_language as LANGUAGE_CODE %}
+
+            {% get_available_languages as LANGUAGES %}
+
+            {% for lang_code, lang_name in LANGUAGES %}
+                <option
+                    value="{{ lang_code }}"
+                    {% if lang_code == LANGUAGE_CODE %}selected{% endif %}
+                >
+                    {{ lang_name }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <input
+            type="hidden"
+            name="next"
+            value="{{ request.path }}"
+        >
+    </form>
+</div>
 
     </header>
 
