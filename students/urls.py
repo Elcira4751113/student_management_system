@@ -1,6 +1,8 @@
 
 from django.urls import path
 from . import views
+from .views import generate_report
+
 
 urlpatterns = [
    
@@ -33,5 +35,23 @@ urlpatterns = [
     path("test-email/", 
          views.test_email, 
          name="test_email"
+    ),
+
+    path(
+        "generate-report/",
+        views.generate_report,
+        name="generate_report",
+    ),
+
+    path(
+        "report/",
+        views.view_report,
+        name="view_report",
+    ),
+
+    path(
+        "report/download/",
+        views.download_report,
+        name="download_report",
     ),
 ]

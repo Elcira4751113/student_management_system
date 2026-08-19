@@ -4,6 +4,9 @@ from .models import Student
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import StudentForm
 from django.db.models import Q
+from students.tasks import generate_student_report_task
+from pathlib import Path
+from django.http import FileResponse, Http404
 
 
 def student_list(request):
@@ -90,5 +93,40 @@ def test_email(request):
         from_email="admin@studentmanagement.com",
         recipient_list=["student@example.com"],
     )
-
     return render(request, "students/email_test.html")
+
+def generate_report(request):
+    task = generate_student_report_task.delay()
+
+    return render(
+        request,
+        "students/report_started.html",
+        {"task_id": task.id},
+    )
+
+def view_report(request):
+    report_path = Path("student_report.txt")
+
+    if not report_path.exists():
+        raise Http404("Report has not been generated yet.")
+
+    report_content = report_path.read_text(encoding="utf-8")
+
+    return render(
+        request,
+        "students/view_report.html",
+        {"report_content": report_content},
+    )
+
+
+def download_report(request):
+    report_path = Path("student_report.txt")
+
+    if not report_path.exists():
+        raise Http404("Report has not been generated yet.")
+
+    return FileResponse(
+        open(report_path, "rb"),
+        as_attachment=True,
+        filename="student_report.txt",
+    )

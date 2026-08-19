@@ -1,0 +1,25 @@
+STUDENT MANAGEMENT REPORT
+=========================
+
+Report generated: 19 August 2026, 09:56
+
+SUMMARY
+-------
+Total students: 5
+Average age: 18.8
+
+STUDENTS BY FIELD
+------------------
+Computer Science: 1
+computer engineering: 3
+software engineering: 1
+
+STUDENT DETAILS
+----------------
+Name: copal | Age: 12 | Field: Computer Science | Gender: M | Email: copal@gmail.com
+Name: john | Age: 21 | Field: computer engineering | Gender: male | Email: john@gmail.com
+Name: Stella | Age: 21 | Field: software engineering | Gender: female | Email: stella@gmail.com
+Name: favour | Age: 19 | Field: computer engineering | Gender: F | Email: favour@gmail.com
+Name: Alice | Age: 21 | Field: computer engineering | Gender: F | Email: alice@gmail.com
+
+Report generated successfully.

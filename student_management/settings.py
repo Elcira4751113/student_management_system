@@ -145,3 +145,5 @@ MAILERS = {
 LOCALE_PATHS = [
     BASE_DIR / "locale",
 ]
+
+CELERY_BROKER_URL = "redis://localhost:6379/0"
