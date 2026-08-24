@@ -2,7 +2,10 @@
 from django.urls import path
 from . import views
 from .views import generate_report
+from rest_framework.routers import DefaultRouter
 
+router = DefaultRouter()
+router.register("api-students-v2", views.StudentViewSet)
 
 urlpatterns = [
    
@@ -54,4 +57,12 @@ urlpatterns = [
         views.download_report,
         name="download_report",
     ),
+
+
+    path("api-students/", 
+         views.api_students, 
+         name="api_students"
+    ),
 ]
+
+urlpatterns += router.urls
